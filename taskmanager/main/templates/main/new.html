@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Список заданий
+{% endblock %}
+
+{% block content %}
+    <h1>Задания</h1>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+    </tr>
+    {% for task in dataset %}
+    <tr>
+        <td>task.title</td>
+        <td>task.task</td>
+    </tr>
+    {% end-for %}
+</table>
+
+{% endblock %}
+
