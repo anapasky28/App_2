@@ -6,18 +6,12 @@
 
 {% block content %}
     <h1>Задания</h1>
-<table>
-    <tr>
-        <th>Название</th>
-        <th>Описание</th>
-    </tr>
-    {% for task in dataset %}
-    <tr>
-        <td>task.title</td>
-        <td>task.task</td>
-    </tr>
-    {% end-for %}
-</table>
-
+    <form method="post">
+        {% csrf_token %}
+        {{form.title}}<br>
+        {{form.task}}<br>
+        <button type="submit" class="btn btn-success">Пуск</button>
+        <span>{{ error }}</span>
+    </form>
 {% endblock %}
 
